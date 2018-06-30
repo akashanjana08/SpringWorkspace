@@ -1,0 +1,32 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+   default-init-method="init"
+   default-destroy-method="destroy"
+   >
+
+   <bean id="student" class="com.rsi.learn.FirstSpring.Student" scope="prototype">  
+   
+    </bean>
+    
+    <bean id="hotTea" class="constructorinject.HotTea"/>
+    
+    <bean id="restaurent" class="constructorinject.Restaurent"  lazy-init="true">
+      <!-- <constructor-arg ref="hotTea"/> -->
+      <property name="tea" ref="hotTea"></property> 
+      <property name="waiterNames">
+      
+         <list>
+              <value>Mr. AB</value>
+              <value>Mr. BC</value>
+              <value>Mr. CD</value>
+              <value>Mr. DE</value>
+              <value>Mr. EF</value>
+         </list>
+      
+      </property>
+    </bean>
+    <bean class="DemoBeanPreProccesor2"></bean>
+    <bean class="DemoBeanPreProccesor1"></bean>
+  </beans>

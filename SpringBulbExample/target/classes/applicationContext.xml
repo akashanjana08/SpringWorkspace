@@ -1,0 +1,18 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+   default-init-method="init"
+   default-destroy-method="destroy"
+   >
+
+    <bean  id="suryaObj"  class="com.learn.spring.rsi.SpringBulbExample.SuryaBulb"></bean>
+    
+    <bean  id="lgObj"  class="com.learn.spring.rsi.SpringBulbExample.LgBulb"></bean>
+    
+    <bean  id="bulbServiceObj"  class="com.learn.spring.rsi.SpringBulbExample.BulbService" scope="singleton">
+    
+           <property name="bulb" ref="lgObj"></property>
+    </bean>
+  
+</beans>

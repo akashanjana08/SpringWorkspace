@@ -1,0 +1,39 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+   default-init-method="init"
+   default-destroy-method="destroy"
+   >
+   
+   
+    <bean id="mobApp1" class="com.learn.spring.rsi.SpringConstructorDI.MobApps">
+     <constructor-arg value="FaceBook"></constructor-arg>
+    </bean>
+    <bean id="mobApp2" class="com.learn.spring.rsi.SpringConstructorDI.MobApps">
+     <constructor-arg value="WhatsApp"></constructor-arg>
+    </bean>
+   
+   
+    <bean id="ram" class="com.learn.spring.rsi.SpringConstructorDI.Ram">
+      <constructor-arg value="Intel"></constructor-arg>
+      <constructor-arg value="250" type="int"></constructor-arg>
+    
+    </bean>
+
+    <bean id="mob" class="com.learn.spring.rsi.SpringConstructorDI.Mobile">
+      <constructor-arg value="Akash Sharma"> </constructor-arg>
+      <constructor-arg value="10" type="int"> </constructor-arg>
+      <constructor-arg>
+        <list>
+          <ref bean="mobApp1"/>
+          <ref bean="mobApp1"/>
+        </list>
+      </constructor-arg>
+      
+      <!-- <constructor-arg>
+         <ref bean="ram"/>
+      </constructor-arg> -->
+    </bean>
+  
+</beans>
